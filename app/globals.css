@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lumina-purple: #7C3AED;
+  --lumina-blue: #2563EB;
+  --lumina-lit: #A78BFA;
+  --lumina-dark: #0F0F1A;
+}
+
+body {
+  background: var(--lumina-dark);
+  color: #F3F4F6;
+  font-family: 'Inter', sans-serif;
+}
+
+.neo-skeuo-btn {
+  @apply px-6 py-3 rounded-2xl font-semibold transition-all;
+  background: linear-gradient(145deg, #1e1e2e, #2a2a3e);
+  box-shadow: 6px 6px 12px rgba(0,0,0,0.4), -3px -3px 8px rgba(255,255,255,0.06);
+  color: #A78BFA;
+  border: 1px solid rgba(167,139,250,0.2);
+}
+
+.neo-skeuo-btn:hover {
+  box-shadow: 0 0 24px rgba(167,139,250,0.5), 6px 6px 12px rgba(0,0,0,0.4);
+  color: #fff;
+}
+
+.neo-skeuo-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.shytech-lit {
+  box-shadow: 0 0 24px rgba(167,139,250,0.6), 6px 6px 12px rgba(0,0,0,0.4);
+  border-color: rgba(167,139,250,0.6);
+}
+
+.journey-section {
+  opacity: 0;
+  transform: translateY(32px);
+}

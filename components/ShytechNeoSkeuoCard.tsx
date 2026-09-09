@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import { useLightContext } from './LightProvider';
 
 interface ShytechNeoSkeuoCardProps {
   children: React.ReactNode;
@@ -17,8 +16,6 @@ export default function ShytechNeoSkeuoCard({
   className = '',
   onClick,
 }: ShytechNeoSkeuoCardProps) {
-  const { angle } = useLightContext();
-
   const materialGradients = {
     wood: 'linear-gradient(145deg, #3D2B1F, #5C4033)',
     metal: 'linear-gradient(145deg, #1e1e2e, #2a2a3e)',
@@ -37,8 +34,8 @@ export default function ShytechNeoSkeuoCard({
       style={{
         background: materialGradients[material],
         boxShadow: isLit
-          ? `0 0 24px rgba(167,139,250,0.5), ${angle.x * 0.1}px ${angle.y * 0.1}px 12px rgba(0,0,0,0.4)`
-          : `${angle.x * 0.1}px ${angle.y * 0.1}px 12px rgba(0,0,0,0.5), -3px -3px 8px rgba(255,255,255,0.05)`,
+          ? '0 0 24px rgba(167,139,250,0.5), var(--light-shadow-x) var(--light-shadow-y) 12px rgba(0,0,0,0.4)'
+          : 'var(--light-shadow-x) var(--light-shadow-y) 12px rgba(0,0,0,0.5), -3px -3px 8px rgba(255,255,255,0.05)',
       }}
     >
       {children}
